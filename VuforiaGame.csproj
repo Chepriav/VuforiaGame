@@ -297,6 +297,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="VuforiaScripts.csproj">
+      <Project>{CC179C3A-F110-1C81-4789-6A3E1CBBEDBC}</Project>
+      <Name>VuforiaScripts</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.StandardEvents.csproj">
       <Project>{6800202F-4402-D405-F8CB-03DC7BD78B92}</Project>
       <Name>UnityEditor.StandardEvents</Name>
@@ -309,17 +313,13 @@
       <Project>{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}</Project>
       <Name>Unity.PackageManagerUI.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{07A21C90-D344-AE1A-8456-9910C203B41A}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="VuforiaScripts.csproj">
-      <Project>{CC179C3A-F110-1C81-4789-6A3E1CBBEDBC}</Project>
-      <Name>VuforiaScripts</Name>
-    </ProjectReference>
     <ProjectReference Include="VuforiaEditorScripts.csproj">
       <Project>{CDE0E850-A104-61B8-8B4D-585E45985D86}</Project>
       <Name>VuforiaEditorScripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{07A21C90-D344-AE1A-8456-9910C203B41A}</Project>
+      <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
