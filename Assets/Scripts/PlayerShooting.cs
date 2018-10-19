@@ -9,9 +9,10 @@ public class PlayerShooting : MonoBehaviour
     public Slider m_AimSlider;                  
     public float m_MinLaunchForce = 5f;        
     public float m_MaxLaunchForce = 25f;        
-    public float m_MaxChargeTime = 0.75f;       
+    public float m_MaxChargeTime = 0.75f;
 
 
+    public Button fireButton;
     private string m_FireButton;                
     private float m_CurrentLaunchForce;         
     private float m_ChargeSpeed;                
@@ -20,7 +21,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void OnEnable()
     {
-        
+       
         m_CurrentLaunchForce = m_MinLaunchForce;
         m_AimSlider.value = m_MinLaunchForce;
     }
@@ -28,8 +29,8 @@ public class PlayerShooting : MonoBehaviour
 
     private void Start()
     {
-       
-        m_FireButton = "Fire1";
+      
+        //m_FireButton = "Fire1";
 
         
         m_ChargeSpeed = (m_MaxLaunchForce - m_MinLaunchForce) / m_MaxChargeTime;
@@ -49,7 +50,7 @@ public class PlayerShooting : MonoBehaviour
             Fire();
         }
         
-        else if (Input.GetButtonDown(m_FireButton))
+        else if (Input.GetButton (m_FireButton))
         {
             
             m_Fired = false;
