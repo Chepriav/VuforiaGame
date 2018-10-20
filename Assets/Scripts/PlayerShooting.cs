@@ -1,92 +1,92 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerShooting : MonoBehaviour
 {
-
-    public Rigidbody m_Stone;                   
-    public Transform m_FireTransform;           
-    public Slider m_AimSlider;                  
-    public float m_MinLaunchForce = 5f;        
-    public float m_MaxLaunchForce = 25f;        
-    public float m_MaxChargeTime = 0.75f;
+    public int damagePerShot = 20;  //Daño por disparo  
+    public float timeBetweenBullets = 0.15f;    //Tiempo entre disparo
+    public float range = 100f;                  //Distancia que la bala recorre.
 
 
-    public Button fireButton;
-    private string m_FireButton;                
-    private float m_CurrentLaunchForce;         
-    private float m_ChargeSpeed;                
-    private bool m_Fired;                       
+    float timer;                        //Tiempo que pasa desde el ultimo disparo.
+    Ray shootRay = new Ray();           //Variable que contiene el punto inicial y la direccion.
+    RaycastHit shootHit;                // Resultado del objeto con el que colisiona la bala.
+    int shootableMask;                  // Representa las capas o colliders de los objetos de las capas a colisionar
+    ParticleSystem gunParticles;
+    LineRenderer gunLine;
+    AudioSource gunAudio;
+    Light gunLight;
+    float effectsDisplayTime = 0.2f;
+    bool fireButton;
 
-
-    private void OnEnable()
+    void Awake ()
     {
-       
-        m_CurrentLaunchForce = m_MinLaunchForce;
-        m_AimSlider.value = m_MinLaunchForce;
+        shootableMask = LayerMask.GetMask ("Shootable");
+        gunParticles = GetComponent<ParticleSystem> ();
+        gunLine = GetComponent <LineRenderer> ();
+        gunAudio = GetComponent<AudioSource> ();
+        gunLight = GetComponent<Light> ();
+        fireButton = false;
     }
 
 
-    private void Start()
+    void Update ()
     {
-      
-        //m_FireButton = "Fire1";
+        timer += Time.deltaTime;
 
-        
-        m_ChargeSpeed = (m_MaxLaunchForce - m_MinLaunchForce) / m_MaxChargeTime;
-    }
-
-
-    private void Update()
-    {
-        
-        m_AimSlider.value = m_MinLaunchForce;
-
-        
-        if (m_CurrentLaunchForce >= m_MaxLaunchForce && !m_Fired)
+		if(fireButton && timer >= timeBetweenBullets && Time.timeScale != 0)
         {
-            
-            m_CurrentLaunchForce = m_MaxLaunchForce;
-            Fire();
+            Shoot ();
+            fireButton = false;
         }
-        
-        else if (Input.GetButton (m_FireButton))
-        {
-            
-            m_Fired = false;
-            m_CurrentLaunchForce = m_MinLaunchForce;
 
-        }
-       
-        else if (Input.GetButton(m_FireButton) && !m_Fired)
+        if(timer >= timeBetweenBullets * effectsDisplayTime)
         {
-           
-            m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
-
-            m_AimSlider.value = m_CurrentLaunchForce;
-        }
-        
-        else if (Input.GetButtonUp(m_FireButton) && !m_Fired)
-        {
-           
-            Fire();
+            DisableEffects ();
         }
     }
 
-
-    private void Fire()
+    public void OnFire()
     {
-        
-        m_Fired = true;
+        fireButton = true;
+    }
 
-       
-        Rigidbody shellInstance =
-            Instantiate(m_Stone, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
 
-       
-        shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward; ;
+    public void DisableEffects ()
+    {
+        gunLine.enabled = false;
+        gunLight.enabled = false;
+    }
 
-       
-        m_CurrentLaunchForce = m_MinLaunchForce;
+
+    void Shoot ()
+    {
+        timer = 0f;
+
+        gunAudio.Play ();
+
+        gunLight.enabled = true;
+
+        gunParticles.Stop ();
+        gunParticles.Play ();
+
+        gunLine.enabled = true;
+        gunLine.SetPosition (0, transform.position);
+
+        shootRay.origin = transform.position;   //De donde sale la bala 
+        shootRay.direction = transform.forward; //y hacia donde
+
+        if (Physics.Raycast (shootRay, out shootHit, range, shootableMask)) //Devuelve cierto o falso dependiendeo si toca o recorre todo el rango. 
+        {
+            /*EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
+            if(enemyHealth != null)
+            {
+                enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+            }*/
+            gunLine.SetPosition (1, shootHit.point);
+        }
+        else
+        {
+            gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+        }
     }
 }
