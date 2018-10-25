@@ -13,7 +13,13 @@ public class SteeringBehaviors : MonoBehaviour
     private AIState currentState = AIState.Pursuit;
     private int minDistance = 5;
     private int safeDistance = 60;
-    
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         switch (currentState)
@@ -49,6 +55,7 @@ public class SteeringBehaviors : MonoBehaviour
             transform.position += moveVector;
         }
     }
+    
     void Flee()
     {
         Vector3 direction = transform.position - target.position;
