@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class SteeringBehaviors : MonoBehaviour 
 {
+    private enum AIState { Idle, Seek, Flee, Arrive, Pursuit, Evade }
 
     public Transform target;
     public float moveSpeed = 6.0f;
     public float rotationSpeed = 1.0f;
+    
+    private AIState currentState = AIState.Pursuit;
     private int minDistance = 5;
     private int safeDistance = 60;
-    public enum AIState { Idle, Seek, Flee, Arrive, Pursuit, Evade }
-    public AIState currentState;
+    
     void Update()
     {
         switch (currentState)
@@ -35,6 +37,7 @@ public class SteeringBehaviors : MonoBehaviour
                 break;
         }
     }
+    
     void Seek()
     {
         Vector3 direction = target.position - transform.position;
@@ -68,6 +71,7 @@ public class SteeringBehaviors : MonoBehaviour
         Vector3 moveVector = direction.normalized * Time.deltaTime * speed;
         transform.position += moveVector;
     }
+    
     void Pursuit()
     {
         int iterationAhead = 30;

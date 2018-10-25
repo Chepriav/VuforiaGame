@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 6f;            // Velocidad del player.
 
     public Vector3 movement;                   // The vector to store the direction of the player's movement.
-    Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
-    int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
-    float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+    private Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
+    private int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+    private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
     void Awake()
     {
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         Move(h, v);
 
         
-        Turning();
+        //Turning();
     }
 
     void Move(float h, float v)
