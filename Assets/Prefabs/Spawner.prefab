@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!4 &4956063434156324
 Transform:
@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1255f534b711c8041af1e8418f28ff47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 1112456219983424, guid: dc5a6ad0595d58944859cf6fac03dc04,
-    type: 2}
+  EnemyPrefab: {fileID: 156854, guid: 09efc08a66079d1489a0aee5d107d882, type: 2}
   player: {fileID: 0}
   spawnTime: 5
