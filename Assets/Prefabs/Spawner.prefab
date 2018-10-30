@@ -54,3 +54,4 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 156854, guid: 09efc08a66079d1489a0aee5d107d882, type: 2}
   player: {fileID: 0}
   spawnTime: 5
+  hasImageBeenFound: 0

@@ -20,6 +20,7 @@ public class SpawnerController : DefaultTrackableEventHandler
 	protected override void OnTrackingFound()
 	{		
 		base.OnTrackingFound();
+		spawner.GetComponent<SpawnerBehaviour>().hasImageBeenFound = true;
 		spawner.SetActive(true);
 		print("Encontrado");
 	}
@@ -28,6 +29,7 @@ public class SpawnerController : DefaultTrackableEventHandler
 	protected override void OnTrackingLost()
 	{
 		base.OnTrackingLost();
+		spawner.GetComponent<SpawnerBehaviour>().hasImageBeenFound = false;
 		spawner.SetActive(false);
 		print("parado");
 		

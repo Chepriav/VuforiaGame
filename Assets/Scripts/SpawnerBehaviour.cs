@@ -9,6 +9,7 @@ public class SpawnerBehaviour : MonoBehaviour
 	public GameObject EnemyPrefab;
 	public Transform player;
 	public float spawnTime = 5.0f;
+	public bool hasImageBeenFound = false;
 	
 	// Use this for initialization
 	void Start ()
@@ -19,7 +20,9 @@ public class SpawnerBehaviour : MonoBehaviour
 	private void OnEnable()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-		StartCoroutine(SpawnRepeatedly());
+		
+		if(hasImageBeenFound)
+			StartCoroutine(SpawnRepeatedly());
 		
 	}
 
