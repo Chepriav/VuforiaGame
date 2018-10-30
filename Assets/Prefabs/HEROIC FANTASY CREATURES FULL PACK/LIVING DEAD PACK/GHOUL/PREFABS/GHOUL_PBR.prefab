@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyRange: 120
+  enemyRange: 83.26
   enemyDamage: 10
 --- !u!136 &136754841031306486
 CapsuleCollider:
