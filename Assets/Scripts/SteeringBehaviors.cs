@@ -35,12 +35,6 @@ public class SteeringBehaviors : MonoBehaviour
             case AIState.Arrive:
                 Arrive();
                 break;
-            case AIState.Pursuit:
-                Pursuit();
-                break;
-            case AIState.Evade:
-                Evade();
-                break;
         }
     }
     
@@ -78,34 +72,6 @@ public class SteeringBehaviors : MonoBehaviour
         Vector3 moveVector = direction.normalized * Time.deltaTime * speed;
         transform.position += moveVector;
     }
-    
-    void Pursuit()
-    {
-        int iterationAhead = 30;
-        var targetSpeed = target.gameObject.GetComponent<PlayerMovement>().movement;
-        Vector3 targetFuturePosition = target.transform.position + (targetSpeed * iterationAhead);
-        Vector3 direction = targetFuturePosition - transform.position;
-        direction.y = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
-        if (direction.magnitude > minDistance)
-        {
-            Vector3 moveVector = direction.normalized * moveSpeed * Time.deltaTime;
-            transform.position += moveVector;
-        }
-    }
-    void Evade()
-    {
-        int iterationAhead = 30;
-        var targetSpeed = target.gameObject.GetComponent<PlayerMovement>().movement;
-        Vector3 targetFuturePosition = target.position + (targetSpeed * iterationAhead);
-        Vector3 direction = transform.position - targetFuturePosition;
-        direction.y = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
-        if (direction.magnitude < safeDistance)
-        {
-            Vector3 moveVector = direction.normalized * moveSpeed * Time.deltaTime;
-            transform.position += moveVector;
-        }
-    }
+   
 }
 
