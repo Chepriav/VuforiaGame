@@ -780,41 +780,6 @@ Prefab:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 739598989}
-    - target: {fileID: 224823346733544380, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224884365241960494, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224979624235511810, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224730629578036082, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 135738030762906220, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 136049872538687384, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 114353295091986772, guid: bf4e95f6c55190949acf656660ea981f,
-        type: 2}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf4e95f6c55190949acf656660ea981f, type: 2}
   m_IsPrefabAsset: 0
