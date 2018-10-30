@@ -10,7 +10,7 @@ public class SteeringBehaviors : MonoBehaviour
     public float moveSpeed = 6.0f;
     public float rotationSpeed = 1.0f;
     
-    private AIState currentState = AIState.Pursuit;
+    private AIState currentState = AIState.Seek;
     private int minDistance = 5;
     private int safeDistance = 60;
     private Animator _animator;

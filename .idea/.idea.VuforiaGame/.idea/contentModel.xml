@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="EnemyAttackingBehaviour.cs" t="Include" />
+        <e p="LifeBar.cs" t="Include" />
         <e p="PlayerHealth.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="GameLoop.cs" t="Include" />
@@ -22,6 +23,26 @@
             <e p="Cartas.xml" t="Include" />
             <e p="VuforiaMars_Images.xml" t="Include" />
             <e p="Vumarks.xml" t="Include" />
+          </e>
+        </e>
+        <e p="Virtual Joystick Pack" t="Include">
+          <e p="Examples" t="Include">
+            <e p="2D Example" t="Include">
+              <e p="Player2DExample.cs" t="Include" />
+            </e>
+            <e p="3D Example" t="Include">
+              <e p="Player3DExample.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Base" t="Include">
+              <e p="Joystick.cs" t="Include" />
+            </e>
+            <e p="Joysticks" t="Include">
+              <e p="FixedJoystick.cs" t="Include" />
+              <e p="FloatingJoystick.cs" t="Include" />
+              <e p="VariableJoystick.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Vuforia" t="Include">
