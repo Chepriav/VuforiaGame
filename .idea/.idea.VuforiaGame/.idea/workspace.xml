@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76910a32-62ea-4110-a738-51bf56724a5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VuforiaGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VuforiaGame/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VuforiaGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VuforiaGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerImageTarget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerImageTarget.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,12 +54,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1058" />
+          <entry key="cs" value="1109" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1058" />
+          <entry key="C#" value="1109" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -114,13 +114,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/PlayerHealth.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="25" column="56" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+            <state relative-caret-position="550">
+              <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
               <folding>
-                <marker date="1540919743488" expanded="false" signature="6:175" ph="..." />
-                <marker date="1540919743488" expanded="true" signature="219:755" ph="{...}" />
-                <marker date="1540919743488" expanded="true" signature="375:438" ph="{...}" />
-                <marker date="1540919743488" expanded="true" signature="481:753" ph="{...}" />
+                <marker date="1540920018106" expanded="false" signature="6:175" ph="..." />
+                <marker date="1540920018106" expanded="true" signature="219:838" ph="{...}" />
+                <marker date="1540920018106" expanded="true" signature="405:468" ph="{...}" />
+                <marker date="1540920018106" expanded="true" signature="511:836" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -359,12 +359,12 @@
       <workItem from="1540407507825" duration="10019000" />
       <workItem from="1540476793183" duration="2350000" />
       <workItem from="1540911757014" duration="680000" />
-      <workItem from="1540918892697" duration="851000" />
+      <workItem from="1540918892697" duration="1530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15640000" />
+    <option name="totallyTimeSpent" value="16319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,13 +570,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/PlayerHealth.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="56" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+        <state relative-caret-position="550">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
           <folding>
-            <marker date="1540919743488" expanded="false" signature="6:175" ph="..." />
-            <marker date="1540919743488" expanded="true" signature="219:755" ph="{...}" />
-            <marker date="1540919743488" expanded="true" signature="375:438" ph="{...}" />
-            <marker date="1540919743488" expanded="true" signature="481:753" ph="{...}" />
+            <marker date="1540920018106" expanded="false" signature="6:175" ph="..." />
+            <marker date="1540920018106" expanded="true" signature="219:838" ph="{...}" />
+            <marker date="1540920018106" expanded="true" signature="405:468" ph="{...}" />
+            <marker date="1540920018106" expanded="true" signature="511:836" ph="{...}" />
           </folding>
         </state>
       </provider>

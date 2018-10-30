@@ -2370,6 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHeatlh: 100
   DamagedImage: {fileID: 114353295091986772}
+  hurtClip: {fileID: 8300000, guid: 5d5c365c71c901a4b97bb8cb4f028a15, type: 3}
 --- !u!114 &114065364237411438
 MonoBehaviour:
   m_ObjectHideFlags: 1

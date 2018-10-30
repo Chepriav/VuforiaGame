@@ -9,9 +9,11 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public float MaxHeatlh;
 	public UnityEngine.UI.Image DamagedImage;
+	public AudioClip hurtClip;
 	
 	private float health;
 	private Sequence hurtImageSequence;
+	
 
 	private void Start()
 	{
@@ -26,6 +28,7 @@ public class PlayerHealth : MonoBehaviour {
 		hurtImageSequence.Append(DamagedImage.DOFade(1.0f,0.1f));
 		hurtImageSequence.Append(DamagedImage.DOFade(0.0f,0.7f));
 		hurtImageSequence.Play();
+		GetComponent<AudioSource>().PlayOneShot(hurtClip);
 		
 		if(health <= 0)
 			SceneManager.LoadScene("Menu");
