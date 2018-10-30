@@ -35,7 +35,7 @@ public class SpawnerBehaviour : MonoBehaviour
 		while (true)
 		{
 			GameObject enemy = Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
-			enemy.transform.parent = transform;
+			enemy.transform.parent = player.transform;
 			enemy.GetComponent<SteeringBehaviors>().target = player;
 			yield return new WaitForSeconds(spawnTime);
 		}
