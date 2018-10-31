@@ -17,11 +17,6 @@ public class EnemyHealth : MonoBehaviour {
 		health = maxHealth;
         anim = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void TakeDamage(int damagePerShot, Vector3 shootHitPoint)
 	{
@@ -37,7 +32,6 @@ public class EnemyHealth : MonoBehaviour {
         anim.SetTrigger("Dead");
 
         ScoreManager.score += scoreValue;
-        gameObject.SetActive(false);
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1.5f);
     }
 }

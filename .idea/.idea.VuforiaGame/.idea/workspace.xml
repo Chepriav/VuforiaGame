@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76910a32-62ea-4110-a738-51bf56724a5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VuforiaGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VuforiaGame/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPlayerTarget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPlayerTarget.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gameloop UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gameloop UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerImageTarget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerImageTarget.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/VuforiaConfiguration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/VuforiaConfiguration.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnerBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SteeringBehaviors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SteeringBehaviors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QCAR/somedata16" beforeDir="false" afterPath="$PROJECT_DIR$/QCAR/somedata16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +21,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1669" />
+          <entry key="cs" value="1680" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1669" />
+          <entry key="C#" value="1680" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -106,9 +97,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+              <folding>
+                <marker date="1541004796049" expanded="false" signature="6:100" ph="..." />
+                <marker date="1541004796049" expanded="true" signature="143:748" ph="{...}" />
+                <marker date="1541004796049" expanded="true" signature="372:439" ph="{...}" />
+                <marker date="1541004796049" expanded="true" signature="506:605" ph="{...}" />
+                <marker date="1541004796049" expanded="true" signature="561:602" ph="{...}" />
+                <marker date="1541004796049" expanded="true" signature="623:746" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -127,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/SpawnerBehaviour.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
@@ -205,6 +208,7 @@
         <option value="$PROJECT_DIR$/Assets/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SteeringBehaviors.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" />
       </list>
     </option>
   </component>
@@ -286,12 +290,12 @@
       <workItem from="1540476793183" duration="2350000" />
       <workItem from="1540911757014" duration="680000" />
       <workItem from="1540918892697" duration="1530000" />
-      <workItem from="1540991383543" duration="1606000" />
+      <workItem from="1540991383543" duration="2859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17925000" />
+    <option name="totallyTimeSpent" value="19178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,9 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerShooting.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="823">
@@ -439,6 +440,21 @@
             <marker date="1540993010809" expanded="true" signature="822:864" ph="{...}" />
             <marker date="1540993010809" expanded="true" signature="907:1171" ph="{...}" />
             <marker date="1540993010809" expanded="true" signature="925:1168" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <marker date="1541004796049" expanded="false" signature="6:100" ph="..." />
+            <marker date="1541004796049" expanded="true" signature="143:748" ph="{...}" />
+            <marker date="1541004796049" expanded="true" signature="372:439" ph="{...}" />
+            <marker date="1541004796049" expanded="true" signature="506:605" ph="{...}" />
+            <marker date="1541004796049" expanded="true" signature="561:602" ph="{...}" />
+            <marker date="1541004796049" expanded="true" signature="623:746" ph="{...}" />
           </folding>
         </state>
       </provider>
