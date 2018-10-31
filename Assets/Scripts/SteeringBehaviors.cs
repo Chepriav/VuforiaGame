@@ -22,6 +22,7 @@ public class SteeringBehaviors : MonoBehaviour
 
     void Update()
     {
+
         switch (currentState)
         {
             case AIState.Idle:

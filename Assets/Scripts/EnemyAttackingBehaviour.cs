@@ -9,11 +9,14 @@ public class EnemyAttackingBehaviour : MonoBehaviour
 	public float enemyRange = 20;
 	public float enemyDamage = 20;
 	private bool canAttack = true;
+    private PlayerHealth playerHealth;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-	}
+        playerHealth = player.GetComponent<PlayerHealth>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -30,8 +33,7 @@ public class EnemyAttackingBehaviour : MonoBehaviour
 
 	private IEnumerator PerformAttack()
 	{
-		player.GetComponent<PlayerHealth>().DecreaseHealth(enemyDamage);
-		
+		playerHealth.DecreaseHealth(enemyDamage);
 		yield return new WaitForSeconds(1.5f);
 		
 		canAttack = true;
