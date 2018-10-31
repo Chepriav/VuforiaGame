@@ -10,12 +10,13 @@ public class EnemyAttackingBehaviour : MonoBehaviour
 	public float enemyDamage = 20;
 	private bool canAttack = true;
     private PlayerHealth playerHealth;
+    Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
-
+        anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -25,9 +26,11 @@ public class EnemyAttackingBehaviour : MonoBehaviour
 		{
 			if(Vector3.Distance(player.position,transform.position) < enemyRange)
 			{
+                anim.SetTrigger("Attack");
 				canAttack = false;
 				StartCoroutine(PerformAttack());
 			}
+            anim.SetTrigger("Walk");
 		}
 	}
 

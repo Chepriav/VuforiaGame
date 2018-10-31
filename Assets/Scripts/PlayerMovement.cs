@@ -4,8 +4,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 
 {
-    public float speed = 6f;            // Velocidad del player.
-
     private Joystick joystick;
     Vector3 direction;
 
@@ -15,13 +13,8 @@ public class PlayerMovement : MonoBehaviour
         direction = Vector3.zero;
     }
 
-
     void FixedUpdate()
     {
-        // Store the input axes.
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
         if (joystick.Direction != Vector2.zero)
         {
         Turning();
