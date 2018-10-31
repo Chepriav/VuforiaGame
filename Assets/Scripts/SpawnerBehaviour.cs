@@ -17,10 +17,25 @@ public class SpawnerBehaviour : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 
+	private IEnumerator IncreaseDifficulty()
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(2.0f);
+			if (spawnTime <= 1.0f)
+				yield return null;
+			else
+				spawnTime -= 1.0f;
+			
+
+		}
+	}
+
 	private void OnEnable()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-		
+		StartCoroutine(IncreaseDifficulty());
+
 		if(hasImageBeenFound)
 			StartCoroutine(SpawnRepeatedly());
 		
