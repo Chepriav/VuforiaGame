@@ -2360,7 +2360,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.98564017, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.04438355, b: 0.2784314, a: 1}
   m_Intensity: 1.02
   m_Range: 10
   m_SpotAngle: 30
@@ -2418,6 +2418,7 @@ MonoBehaviour:
   damagePerShot: 30
   timeBetweenBullets: 0.15
   range: 100
+  capsuleRadius: 30
 --- !u!114 &114066557848052686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3090,7 +3091,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462730587355812}
   serializedVersion: 5
-  lengthInSec: 0.2
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -3269,7 +3270,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9764706, g: 0.9098039, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.040540546, b: 0.21568628, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

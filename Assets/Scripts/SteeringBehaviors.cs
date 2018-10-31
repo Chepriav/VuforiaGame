@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SteeringBehaviors : MonoBehaviour
 {
-    private enum AIState
+    public enum AIState
     {
         Idle,
         Seek,
@@ -18,7 +18,7 @@ public class SteeringBehaviors : MonoBehaviour
     public float moveSpeed = 4.0f;
     public float rotationSpeed = 1.0f;
 
-    private AIState currentState = AIState.Seek;
+    public AIState currentState = AIState.Seek;
     private int minDistance = 60;
     private int safeDistance = 150;
     private Animator _animator;
@@ -44,16 +44,6 @@ public class SteeringBehaviors : MonoBehaviour
                 Arrive();
                 break;
         }
-    }
-
-
-    private void OnGUI()
-    {
-        if (GUILayout.Button("Idle"))
-            currentState = AIState.Idle;
-
-        if (GUILayout.Button("Seek"))
-            currentState = AIState.Seek;
     }
 
     void Seek()

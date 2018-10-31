@@ -10,6 +10,8 @@ public class SpawnerBehaviour : MonoBehaviour
 	public Transform player;
 	public float spawnTime = 5.0f;
 	public bool hasImageBeenFound = false;
+
+    private bool isCoroutineStarted = false;
 	
 	// Use this for initialization
 	void Start ()
@@ -25,9 +27,7 @@ public class SpawnerBehaviour : MonoBehaviour
 			if (spawnTime <= 1.0f)
 				yield return null;
 			else
-				spawnTime -= 1.0f;
-			
-
+				spawnTime -= 0.2f;
 		}
 	}
 
@@ -35,10 +35,6 @@ public class SpawnerBehaviour : MonoBehaviour
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		StartCoroutine(IncreaseDifficulty());
-
-		if(hasImageBeenFound)
-			StartCoroutine(SpawnRepeatedly());
-		
 	}
 
 	private void OnDisable()
@@ -46,9 +42,22 @@ public class SpawnerBehaviour : MonoBehaviour
 		StopCoroutine(SpawnRepeatedly());
 	}
 
-	
+    private void Update()
+    {
+        if (hasImageBeenFound && !isCoroutineStarted)
+        {
+            isCoroutineStarted = true;
+            StartCoroutine(SpawnRepeatedly());
+        }
+        else if(!hasImageBeenFound && isCoroutineStarted)
+        {
+            isCoroutineStarted = false;
+            StopCoroutine(SpawnRepeatedly());
+        }
+    }
 
-	private IEnumerator SpawnRepeatedly()
+
+    private IEnumerator SpawnRepeatedly()
 	{
 		while (true)
 		{

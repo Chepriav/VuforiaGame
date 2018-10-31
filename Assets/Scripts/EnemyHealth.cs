@@ -27,11 +27,12 @@ public class EnemyHealth : MonoBehaviour {
         }
 	}
 
-    void Death()
+    public void Death()
     {
+        GetComponent<SteeringBehaviors>().currentState = SteeringBehaviors.AIState.Idle;
+        GetComponent<Collider>().enabled = false;
         anim.SetTrigger("Dead");
-
         ScoreManager.score += scoreValue;
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 2.5f);
     }
 }

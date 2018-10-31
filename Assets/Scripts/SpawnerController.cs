@@ -20,18 +20,19 @@ public class SpawnerController : DefaultTrackableEventHandler
 	protected override void OnTrackingFound()
 	{		
 		base.OnTrackingFound();
-		spawner.GetComponent<SpawnerBehaviour>().hasImageBeenFound = true;
 		spawner.SetActive(true);
-		print("Encontrado");
+		print("Player encontrado y spawner listo para ser encontrado");
 	}
 
 
 	protected override void OnTrackingLost()
 	{
 		base.OnTrackingLost();
-		spawner.GetComponent<SpawnerBehaviour>().hasImageBeenFound = false;
-		spawner.SetActive(false);
-		print("parado");
+
+        if(spawner != null)
+		    spawner.SetActive(false);
+        
+		print("Player perdido,no se puede acceder al spawner");
 		
 	}
 

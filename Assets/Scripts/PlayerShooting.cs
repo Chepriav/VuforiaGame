@@ -2,10 +2,10 @@
 
 public class PlayerShooting : MonoBehaviour
 {
-    public int damagePerShot = 20;  //Daño por disparo  
+    public int damagePerShot = 300;  //Daño por disparo  
     public float timeBetweenBullets = 0.15f;    //Tiempo entre disparo
-    public float range = 100f;                  //Distancia que la bala recorre.
-
+    public float range = 300f;                  //Distancia que la bala recorre.
+    public float capsuleRadius = 100f;
 
     float timer;                        //Tiempo que pasa desde el ultimo disparo.
     Ray shootRay = new Ray();           //Variable que contiene el punto inicial y la direccion.
@@ -75,12 +75,12 @@ public class PlayerShooting : MonoBehaviour
         shootRay.origin = transform.position;   //De donde sale la bala 
         shootRay.direction = transform.forward; //y hacia donde
 
-        if (Physics.Raycast (shootRay, out shootHit, range, shootableMask)) //Devuelve cierto o falso dependiendeo si toca o recorre todo el rango. 
+        if (Physics.SphereCast(shootRay,capsuleRadius,out shootHit,range,shootableMask)) //Devuelve cierto o falso dependiendeo si toca o recorre todo el rango. 
         {
             EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
             if(enemyHealth != null)
             {
-                enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+                enemyHealth.Death();
             }
             gunLine.SetPosition (1, shootHit.point);
         }
