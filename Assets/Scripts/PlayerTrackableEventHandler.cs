@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class SpawnerController : DefaultTrackableEventHandler
+public class PlayerTrackableEventHandler : DefaultTrackableEventHandler
 {
 
 	public GameObject spawner;
