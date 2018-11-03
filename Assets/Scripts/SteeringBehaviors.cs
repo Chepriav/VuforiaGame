@@ -7,11 +7,7 @@ public class SteeringBehaviors : MonoBehaviour
     public enum AIState
     {
         Idle,
-        Seek,
-        Flee,
-        Arrive,
-        Pursuit,
-        Evade
+        Seek
     }
 
     public Transform target;
@@ -22,6 +18,7 @@ public class SteeringBehaviors : MonoBehaviour
     private int minDistance = 60;
     private int safeDistance = 150;
     private Animator _animator;
+    private bool inContact;
 
     private void Awake()
     {
@@ -37,13 +34,11 @@ public class SteeringBehaviors : MonoBehaviour
             case AIState.Seek:
                 Seek();
                 break;
-            case AIState.Flee:
-                Flee();
-                break;
-            case AIState.Arrive:
-                Arrive();
-                break;
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        inContact = true;
     }
 
     void Seek()
@@ -52,21 +47,8 @@ public class SteeringBehaviors : MonoBehaviour
         direction.y = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
             rotationSpeed * Time.deltaTime);
-        if (direction.magnitude > minDistance)
+        if (direction.magnitude > minDistance || inContact)
         {
-            Vector3 moveVector = direction.normalized * moveSpeed * Time.deltaTime;
-            transform.position += moveVector;
-        }
-    }
-
-    void Flee()
-    {
-        Vector3 direction = transform.position - target.position;
-        direction.y = 0;
-        if (direction.magnitude < safeDistance)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction),
-                rotationSpeed * Time.deltaTime);
             Vector3 moveVector = direction.normalized * moveSpeed * Time.deltaTime;
             transform.position += moveVector;
         }

@@ -10,6 +10,7 @@ public class SpawnerBehaviour : MonoBehaviour
 	public Transform player;
 	public float spawnTime = 5.0f;
 	public bool hasImageBeenFound = false;
+    Transform parentTransform;
 
     private bool isCoroutineStarted = false;
 	
@@ -17,24 +18,13 @@ public class SpawnerBehaviour : MonoBehaviour
 	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+        parentTransform = GetComponentInParent<Transform>();
 	}
 
-	private IEnumerator IncreaseDifficulty()
-	{
-		while (true)
-		{
-			yield return new WaitForSeconds(2.0f);
-			if (spawnTime <= 1.0f)
-				yield return null;
-			else
-				spawnTime -= 0.2f;
-		}
-	}
 
 	private void OnEnable()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-		StartCoroutine(IncreaseDifficulty());
 	}
 
 	private void OnDisable()
@@ -61,7 +51,7 @@ public class SpawnerBehaviour : MonoBehaviour
 	{
 		while (true)
 		{
-			GameObject enemy = Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
+			GameObject enemy = Instantiate(EnemyPrefab, parentTransform.position, Quaternion.identity);
 			enemy.transform.parent = transform;
 			enemy.GetComponent<SteeringBehaviors>().target = player;
 			yield return new WaitForSeconds(spawnTime);
