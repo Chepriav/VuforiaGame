@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Joystick joystick;
     Vector3 direction;
+    public Transform model;
 
     private void Start()
     {
@@ -26,6 +27,6 @@ public class PlayerMovement : MonoBehaviour
         direction = (joystick.Direction).normalized;
         
         float heading = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)-90;
-        transform.rotation = Quaternion.Euler(0f, heading * -1, 0f);
+        model.rotation = Quaternion.Euler(0f, heading * -1, 0f);
     }
 }
