@@ -23,9 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Turning()
     {
-        direction = joystick.Direction;
-       
-        float heading = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f,heading * -1,0f);
+        direction = (joystick.Direction).normalized;
+        
+        float heading = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)-90;
+        transform.rotation = Quaternion.Euler(0f, heading * -1, 0f);
     }
 }
